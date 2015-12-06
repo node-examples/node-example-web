@@ -1,0 +1,14 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+	// Configure glob patterns for excluding files and folders.
+	"files.exclude": {
+		"**/.git": true,
+		"**/.DS_Store": true,
+		"**/node_modules": true
+	},
+
+	// Controls whether the editor should render whitespace characters
+	"editor.renderWhitespace": true,
+	"editor.insertSpaces": true,
+	"editor.tabSize": 4
+}

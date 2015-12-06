@@ -1,0 +1,94 @@
+{
+    "build": {
+        // Client-side application bundling and packaging.
+        "client": {
+            // Application entry point for client application
+            "entryPoint": "./src/client/index.js",
+            
+            // Don't mangle names when uglifying.
+            "mangleNames": false,
+            
+            // Name of browserified, babelified output file.
+            "outputFile": "app.js",
+            
+            // Name of browserified, babelified, uglified output file.
+            "outputFileMinified": "app.min.js",
+            
+            // Directory to write files to
+            "outputPath": "./public/build/javascripts",
+            
+            // Directory to write source-maps to
+            "sourceMapsPath": "./public/build/javascripts",
+            
+            // Babel options
+            "transpiler": {
+                // Translate ES6 to ES5 for the client.
+                "babel-preset": "es2015"
+            }
+        },
+
+        // Javascript linting
+        "linting": {
+            // Console formatter
+            "formatter": "stylish",
+
+            // Paths to lint (note that this includes everything, then
+            // excludes the paths we don't want. This is because some
+            // code like build-tasks exist outside the /src path.
+            "paths": [
+                "**/*.js",
+                "!docs/**",
+                "!public/build/**",
+                "!node_modules/**",
+                "!public/build/**"
+            ]
+        },
+
+        // Global build flags/options that affect multiple areas.
+        "options": {
+            // Controls debug mode for:
+            //    build-client: browserify
+            "debug": true
+        },
+
+        // Documentation generation
+        "documentation": {
+            // Path to write documentation to
+            "outputPath": "./docs/",
+
+            // Include undocumented identifiers
+            "undocumentedIdentifiers": true,
+
+            // Include unexported identifiers, required for CommonJS module notation.
+            "unexportedIdentifiers": true,
+            
+            // Type of tests
+            "testType": "mocha",
+
+            // Root for tests to include in documentation.
+            "testRoot": "./test"
+        },
+
+        // Unit-testing
+        "testing": {
+            "find-pattern": "./test/**/*.js",
+            "coverage": {
+                // % of code to cover with tests
+                "enforceThreshold": 90,
+
+                // Include coverage results for files not touched at all by
+                // any of our Mocha tests
+                "includeUntested": true,
+
+                // Instrument all application code
+                "instrumentPath": "./src/**/*.js",
+
+                // Path to write coverage HTML report to.
+                "outputPath": "./docs/code-coverage",
+
+                // Temporary path for coverage tests
+                "tempPath": "./build-temp/coverage"
+            }
+        }
+    }
+}
