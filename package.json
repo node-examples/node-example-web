@@ -1,5 +1,5 @@
 {
-  "name": "reference-project",
+  "name": "node-example-web",
   "version": "0.0.1",
   "description": "Reference project showing how to use various tools to produce a modern, unit-tested web application with shared code between client and server.",
   "main": "index.js",
@@ -21,7 +21,7 @@
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/npm/npm.git"
+    "url": "https://github.com/node-examples/node-example-web.git"
   },
   "devDependencies": {
     "babel": "^6.3.13",
