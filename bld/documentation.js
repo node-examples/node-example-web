@@ -1,3 +1,5 @@
+'use strict';
+
 const config = require('config');
 const esdoc = require('gulp-esdoc');
 const gulp = require('gulp');

@@ -1,3 +1,5 @@
+'use strict';
+
 const browserify = require('browserify');
 const buffer = require('vinyl-buffer');
 const config = require('config');
@@ -16,7 +18,9 @@ module.exports = function runBuildClient() {
 
     // Translate ES6 to a suitable dialect for compatibility
     bundler.transform('babelify', {
-        presets: [config.get('build.client.transpiler.babel-preset')] });
+        presets: [config.get('build.client.transpiler.babel-preset')],
+        plugins: ['transform-strict-mode'],
+    });
 
     return bundler.bundle()
         .pipe(source(config.get('build.client.outputFile')))

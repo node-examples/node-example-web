@@ -1,3 +1,5 @@
+'use strict';
+
 const babel = require('babel-core/register');
 const config = require('config');
 const gulp = require('gulp');
