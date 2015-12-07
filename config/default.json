@@ -32,16 +32,20 @@
             // Console formatter
             "formatter": "stylish",
 
-            // Paths to lint (note that this includes everything, then
-            // excludes the paths we don't want. This is because some
-            // code like build-tasks exist outside the /src path.
-            "paths": [
-                "**/*.js",
-                "!docs/**",
-                "!public/build/**",
-                "!node_modules/**",
-                "!public/build/**"
-            ]
+            "paths": {
+                "server": [
+                    "./src/server/**/*.js"
+                ],
+                "client": [
+                    "./src/client/**/*.js"
+                ],
+                "shared": [
+                    "./src/shared/**/*.js"
+                ],
+                "tests": [
+                    "./test/mocha/**/*.js"
+                ]
+            }
         },
 
         // Global build flags/options that affect multiple areas.
@@ -66,12 +70,12 @@
             "testType": "mocha",
 
             // Root for tests to include in documentation.
-            "testRoot": "./test"
+            "testRoot": "./test/mocha"
         },
 
         // Unit-testing
         "testing": {
-            "find-pattern": "./test/**/*.js",
+            "find-pattern": "./test/mocha/**/*.js",
             "coverage": {
                 // % of code to cover with tests
                 "enforceThreshold": 90,
